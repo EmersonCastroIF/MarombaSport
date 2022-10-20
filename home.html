@@ -224,7 +224,7 @@
 				<form onsubmit="return validaForm()">
 					<input type="text" placeholder="Nome" />
 					<input type="text" placeholder="Telefone" />
-					<input type="text" id="email" placeholder="E-mail" />
+					<input type="email" id="email" placeholder="E-mail" />
 					<h3 id="msgErro" style="color:red"></h3>
 					
 					<textarea rolss="5" placeholder="Mensagem"></textarea>
@@ -267,7 +267,7 @@
 
 	<script>
 		function validaForm(){
-			var campo = document.forms[0]["#email"];
+			var campo = document.forms[0]["email"];
 			if (campo.value.search("@")==-1){				
 				document.getElementById("msgErro").innerHTML = ('Email invalido');
 				return false;
