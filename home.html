@@ -221,9 +221,9 @@
 
 				<label class="contatoLabel">Contato</label>
 
-				<form onsubmit="return validaForm()" id="formulario">
-					<input type="text" id="nome" placeholder="Nome" />
-					<input type="text" id="telefone" placeholder="Telefone" />
+				<form onsubmit="return validaForm()">
+					<input type="text" placeholder="Nome" />
+					<input type="text" placeholder="Telefone" />
 					<input type="text" id="email" placeholder="E-mail" />
 					<h3 id="msgErro" style="color:red"></h3>
 					
@@ -281,7 +281,7 @@
 	<script>
 		function validaForm(){
 			var campo = document.forms[0]["#email"];
-			if ((campo.value.search("@")==-1) && (campo.value.length < 5 )){				
+			if (campo.value.search("@")==-1){				
 				document.getElementById("msgErro").innerHTML = ('Email invalido');
 				return false;
 			}	
