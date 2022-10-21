@@ -221,16 +221,29 @@
 
 				<label class="contatoLabel">Contato</label>
 
-				<form onsubmit="return validaForm()">
-					<input type="text" placeholder="Nome" />
-					<input type="text" placeholder="Telefone" />
+				<form onsubmit="return validaForm()" id="formulario">
+					<input type="text" id="nome" placeholder="Nome" />
+					<input type="text" id="telefone" placeholder="Telefone" />
 					<input type="text" id="email" placeholder="E-mail" />
 					<h3 id="msgErro" style="color:red"></h3>
 					
-					<textarea rolss="5" placeholder="Mensagem"></textarea>
-					<button class="enviar">Enviar</button>
+					<input type="text"  id="mensagem" placeholder="Mensagem">
+					
+					<input type="submit" onclick="alert('Cadastro realizado com Sucesso')" value="Enviar">
 				</form>
-
+				<p id="mensagem"></p>
+				<script>
+					var dados = document.getElementById("mensagem");
+					function msg(){
+						if (obj.innerHTML.charAt(0) == 'R')
+						obj.innerHTML = "Dados recebidos!";
+						
+					}
+					setInterval(() => {
+						alterar();
+					}, 2000);
+		
+				</script>
 			</div>
 		</section>
 		<section class="footer">
@@ -268,9 +281,37 @@
 	<script>
 		function validaForm(){
 			var campo = document.forms[0]["#email"];
-			if (campo.value.search("@")==-1){				
+			if ((campo.value.search("@")==-1) && (campo.value.length < 5 )){				
 				document.getElementById("msgErro").innerHTML = ('Email invalido');
 				return false;
 			}	
 		}
 	</script>
+	<script>
+		
+
+			var formulario = document.getElementById("formulario");
+			var nome = document.getElementById("nome");
+			var telefone = document.getElementById("telefone");
+			var email = document.getElementById("email");
+			var mensagem = document.getElementById("mensagem");
+			
+		
+			
+		formulario.addEventListener('submit', function(e) {
+			
+				let cookie = document.cookie = "Nome :" + nome.value;
+				let cookie2 = document.cookie = "Telefone :" + telefone.value;
+				let cookie3 = document.cookie = "E-mail :" + email.value;
+				let cookie4 = document.cookie = "Mensagem :" + mensagem.value;
+			
+					console.log(cookie +'<br>');
+					console.log(cookie2+'<br>');
+					console.log(cookie3+'<br>');
+					console.log(cookie4+'<br>');
+			
+			
+    	e.preventDefault();
+});
+	</script>
+	
