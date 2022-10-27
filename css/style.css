@@ -1,3 +1,10 @@
+.Mychart{
+    width: 600px;
+    margin: 0 auto;
+    height: 220px;
+    padding: 2px;
+    }
+
 .ConteudoFundo{
     background-color: #d3d3d3;
 }

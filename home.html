@@ -1,10 +1,9 @@
 <DOCTYPE html>
 	<html>
-
 	<head>
 		<meta charset="UTF-8">
 		<title>Maromba Sport</title>
-
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
 		<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 
 	</head>
@@ -229,10 +228,12 @@
 					
 					<input type="text"  id="mensagem" placeholder="Mensagem">
 					
+				
+					
 					<input type="submit" onclick="alert('Cadastro realizado com Sucesso')" value="Enviar">
 				</form>
 				<p id="mensagem"></p>
-				<script>
+				<!-- <script>
 					var dados = document.getElementById("mensagem");
 					function msg(){
 						if (obj.innerHTML.charAt(0) == 'R')
@@ -243,8 +244,25 @@
 						alterar();
 					}, 2000);
 		
-				</script>
+				</script> -->
+
+
+
 			</div>
+			
+			<div>
+				<!-- <form> -->
+					<input type="text" id="Peso" placeholder="Peso" value="100" />
+					<input type="text" id="Altura" placeholder="Altura" value="200" />
+					<input type="text" id="TESTE" placeholder="TESTE" value="TESTE" />
+					<button> Alterar </button>
+					
+				<!-- </form>			 -->
+						<canvas id='graph' class="Mychart"  ></canvas>
+						
+				
+			</div>
+		
 		</section>
 		<section class="footer">
 
@@ -314,4 +332,5 @@
     	e.preventDefault();
 });
 	</script>
+	<script src="js/graficoPizza.js"></script>
 	
