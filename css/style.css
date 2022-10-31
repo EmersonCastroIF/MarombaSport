@@ -5,6 +5,48 @@
     padding: 2px;
     }
 
+
+
+
+      @media only screen and (min-device-width: 768px) {
+        .gauge-container {
+          width: 300px;
+          height: 300px;
+        }
+        .example > .code {
+          width: 65%;
+          float: right;
+        }
+        .example > .display {
+          width: 60%;
+          float: right;
+          padding: 50px;
+        }
+      }
+
+
+    .gauge-container.two {
+        height: auto;
+        border: 1px solid rgba(255,255,255,0.1);
+        justify-content: center;
+        align-content: center;
+      }
+      .gauge-container.two > .gauge > .dial {
+        stroke: #334455;
+        stroke-width: 10;
+        align-content: center;
+      }
+      .gauge-container.two > .gauge > .value {
+        /*stroke: orange;*/
+        stroke-dasharray: none;
+        stroke-width: 13;
+        align-content: center;
+      }
+      .gauge-container.two > .gauge > .value {
+        justify-content: center;
+        align-content: center;
+      }    
+
 .ConteudoFundo{
     background-color: #d3d3d3;
 }
@@ -102,6 +144,51 @@ section.suplementacao{
     font-size: 30px;
     font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
     margin-bottom: -6px;
+}
+.IMC{
+	padding-top: 100px;
+	margin-top: 10px; 
+	margin-bottom: 50px;
+   
+    display: grid;
+    justify-content: center;
+}
+.IMC label {
+	
+    font-weight: 500;
+    font-size: 40px;
+    font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+    margin-top: -23px;
+    margin-bottom: 36px;
+    text-align: left;
+    color: #6c6c6c;
+    
+}
+.IMC h1 {
+	
+    font-weight: 500;
+    font-size: 40px;
+    font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+    margin-top: -23px;
+    margin-bottom: 36px;
+    text-align: center;
+    color: #6c6c6c;
+    
+}
+.IMC button{
+    background-color: #124fff;
+    color: #fff;
+    border: #124fff;
+    text-align: center;
+    width: 300;
+
+}
+.IMC input{
+      width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+
 }
 .tabelaUm{
 	padding-top: 100px;
