@@ -233,6 +233,7 @@ section.suplementacao{
 .tabelaUm .tabela table td{
     padding: 15px;
     border-bottom: 1px solid #ddd;
+    transition: background-color 3s;
 }
 section.VideoYoutube {
     background-color: #000;

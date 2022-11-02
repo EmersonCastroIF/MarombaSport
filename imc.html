@@ -4,6 +4,7 @@
 		<meta charset="UTF-8">
 		<title>Maromba Sport</title>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 		<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 
 	</head>
@@ -26,14 +27,9 @@
 			</div>
 
 		</section>
-		
 
 		<div class="IMC" id="alimento">
 				<h1 class="contatoLabel">Cáculo de IMC</h1>
-
-					
-			
-
 					<div  class="example">
 
 						<div class="display">
@@ -46,13 +42,15 @@
 						<input type="text" id="Peso" placeholder="Peso" value="0" />
 						<label  for="fname">Altura</label>
 						<input type="text" id="Altura" placeholder="Altura" value="0" />
-						<button> Cálcular </button>
+						<input type="text" hidden id="IMC" value="0" />
+						
+						<button id="btnCalc"> Cálcular </button>
 					  </div>
 					
 		</div>
 					
 		<div class="tabelaUm">
-			<div class="tabela">
+			<div class="tabela" id="divTabela" style="display:none;background-color:rgba(209, 209, 209, 0.151);">
 				<table>
 					<tbody>
 						<tr>
@@ -60,28 +58,28 @@
 							<th><strong>Classificação</strong></th>
 						</tr>
 						<tr>
-							<td>Menor do que 18,5</td>
-							<td>Abaixo do peso</td>
+							<td id="18range">Menor do que 18,5</td>
+							<td id="18peso">Abaixo do peso</td>
 						</tr>
 						<tr>
-							<td>Entre 18,5 e 24,9</td>
-							<td>Peso normal</td>
+							<td id="18e24range">Entre 18,5 e 24,9</td>
+							<td id="18e24peso">Peso normal</td>
 						</tr>
 						<tr>
-							<td>Entre 25 e 29,9</td>
-							<td>Acima do peso (sobrepeso)</td>
+							<td id="25e29range">Entre 25 e 29,9</td>
+							<td id="25e29peso">Acima do peso (sobrepeso)</td>
 						</tr>
 						<tr>
-							<td>Entre 30 e 34,9</td>
-							<td>Obesidade I</td>
+							<td id="30e34range">Entre 30 e 34,9</td>
+							<td id="30e34peso">Obesidade I</td>
 						</tr>
 						<tr>
-							<td>Entre 35 e 39,9</td>
-							<td>Obesidade II</td>
+							<td id="35e39range">Entre 35 e 39,9</td>
+							<td id="35e39peso">Obesidade II</td>
 						</tr>
 						<tr>
-							<td>Maior do que 40</td>
-							<td>Obesidade III</td>
+							<td id="40range">Maior do que 40</td>
+							<td id="40peso">Obesidade III</td>
 						</tr>
 					</tbody>
 				</table>
@@ -90,20 +88,6 @@
 					
 					
 			
-				<p id="mensagem"></p>
-				<!-- <script>
-					var dados = document.getElementById("mensagem");
-					function msg(){
-						if (obj.innerHTML.charAt(0) == 'R')
-						obj.innerHTML = "Dados recebidos!";
-						
-					}
-					setInterval(() => {
-						alterar();
-					}, 2000);
-		
-				</script> -->
-
 
 
 	
@@ -138,44 +122,7 @@
 	</body>
 
 	</html>
-
-	<script>
-		function validaForm(){
-			var campo = document.forms[0]["#email"];
-			if (campo.value.search("@")==-1){				
-				document.getElementById("msgErro").innerHTML = ('Email invalido');
-				return false;
-			}	
-		}
-	</script>
-	<script>
-		
-
-			var formulario = document.getElementById("formulario");
-			var nome = document.getElementById("nome");
-			var telefone = document.getElementById("telefone");
-			var email = document.getElementById("email");
-			var mensagem = document.getElementById("mensagem");
-			
-		
-			
-		formulario.addEventListener('submit', function(e) {
-			
-				let cookie = document.cookie = "Nome :" + nome.value;
-				let cookie2 = document.cookie = "Telefone :" + telefone.value;
-				let cookie3 = document.cookie = "E-mail :" + email.value;
-				let cookie4 = document.cookie = "Mensagem :" + mensagem.value;
-			
-					console.log(cookie +'<br>');
-					console.log(cookie2+'<br>');
-					console.log(cookie3+'<br>');
-					console.log(cookie4+'<br>');
-			
-			
-    	e.preventDefault();
-});
-	</script>
-	<script src="js/AtualizaGauge.js"></script>
+	<script type="module" src="js/AtualizaGauge.js"></script>
 	<script type="text/javascript" src="js/gauge.js"> </script>
 
 
